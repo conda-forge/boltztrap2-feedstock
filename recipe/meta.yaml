@@ -1,5 +1,5 @@
 {% set name = "BoltzTraP2" %}
-{% set version = "22.3.1" %}
+{% set version = "22.3.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/BoltzTraP2-{{ version }}.tar.gz
-  sha256: 105a4645d5c008a9a9b8f187df610a3023297e2c339674b4be94a9a44af90f2e
+  sha256: 628dfbc5d5f10902a403e96b144669d43c63272db5e90e9a6184faf0f131f495
 
 build:
   number: 0
