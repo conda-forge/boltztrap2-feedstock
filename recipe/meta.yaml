@@ -11,7 +11,7 @@ source:
   sha256: 105a4645d5c008a9a9b8f187df610a3023297e2c339674b4be94a9a44af90f2e
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py<35]
   entry_points:
     - btp2 = BoltzTraP2.interface:btp2_main
