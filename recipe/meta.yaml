@@ -24,6 +24,7 @@ requirements:
     - cython
     - cmake
     - make
+    - packaging
   host:
     - pip
     - python
