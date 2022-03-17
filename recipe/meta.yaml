@@ -24,13 +24,13 @@ requirements:
     - cython
     - cmake
     - make
-    - packaging
   host:
     - pip
     - python
     - spglib
     - eigen
     - numpy
+    - packaging
   run:
     - python
     - {{ pin_compatible('numpy') }}
