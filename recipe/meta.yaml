@@ -1,5 +1,5 @@
 {% set name = "BoltzTraP2" %}
-{% set version = "24.1.1" %}
+{% set version = "24.9.4" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/BoltzTraP2-{{ version }}.tar.gz
-  sha256: 920bf894f0717019912a285a4f03d1cfc6c74d601650e199003b4951bdf2f82e
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
+  sha256: 05f191eec63413dafe4570357c2f6ecb51970be10557544a3af332bc671ff9a1
 
 build:
   number: 0
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - setuptools
     - cython
     - cmake
