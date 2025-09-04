@@ -13,7 +13,7 @@ source:
     - spglib.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   entry_points:
     - btp2 = BoltzTraP2.interface:btp2_main
@@ -24,8 +24,6 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - cython
-    - cmake
-    - make
   host:
     - pip
     - python
