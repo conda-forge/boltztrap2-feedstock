@@ -1,26 +1,21 @@
-From 7f03cc220228f39ad23e0457cf88893ec68e589e Mon Sep 17 00:00:00 2001
+From 00195715869780398613844e3d1c27eee7e22211 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jan=20Jan=C3=9Fen?= <janssen@mpie.de>
-Date: Thu, 4 Sep 2025 07:39:29 +0200
-Subject: [PATCH] remove spglib build
+Date: Thu, 4 Sep 2025 07:48:22 +0200
+Subject: [PATCH] Do not build spglib
 
 ---
- setup.py | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ setup.py | 2 --
+ 1 file changed, 2 deletions(-)
 
 diff --git a/setup.py b/setup.py
-index 9960cea..d08e2ce 100644
+index 9960cea..6d8b93d 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -194,10 +194,10 @@ def run(self):
-         ],
-         language="c++",
-         include_dirs=INCLUDE_DIRS
--        + [np.get_include(), BuildSPGlibCommand.header_dir, EIGEN_DIR],
-+        + [np.get_include(), EIGEN_DIR],
-         library_dirs=LIBRARY_DIRS,
-         runtime_library_dirs=LIBRARY_DIRS,
--        extra_objects=[BuildSPGlibCommand.static_library],
-+        extra_objects=[],
-     )
- ]
- 
+@@ -205,7 +205,5 @@ def run(self):
+     ext_modules=cythonize(extensions) if USE_CYTHON else extensions,
+     cmdclass={
+         "build_ext": BuildExtCommand,
+-        "build_spglib": BuildSPGlibCommand,
+-        "clean_spglib": CleanSPGlibCommand,
+     },
+ )
