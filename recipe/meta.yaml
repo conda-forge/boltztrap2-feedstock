@@ -42,6 +42,7 @@ requirements:
     - matplotlib-base
     - ase
     - netcdf4
+    - cython
 
 test:
   imports:
