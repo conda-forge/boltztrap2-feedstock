@@ -4,8 +4,8 @@ Date: Thu, 4 Sep 2025 07:58:05 +0200
 Subject: [PATCH] Do not build spglib
 
 ---
- setup.py | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ setup.py | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/setup.py b/setup.py
 index 9960cea..22ed85e 100644
@@ -20,7 +20,7 @@ index 9960cea..22ed85e 100644
          super().run()
  
  
-@@ -194,10 +194,10 @@ def run(self):
+@@ -194,10 +194,11 @@ def run(self):
          ],
          language="c++",
          include_dirs=INCLUDE_DIRS
@@ -29,7 +29,8 @@ index 9960cea..22ed85e 100644
          library_dirs=LIBRARY_DIRS,
          runtime_library_dirs=LIBRARY_DIRS,
 -        extra_objects=[BuildSPGlibCommand.static_library],
-+        extra_objects=[],
++        libraries=["symspg"],
++        extra_link_args=["-L${PREFIX}/lib"],
      )
  ]
  
