@@ -9,6 +9,8 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
   sha256: 25420687fe8017ec582e617740de3bfc0e44f733ca7613b69619fdee0899278f
+  patches:
+    - spglib.patch
 
 build:
   number: 0
