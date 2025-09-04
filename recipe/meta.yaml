@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/BoltzTraP2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/BoltzTraP2-{{ version }}.tar.gz
   sha256: 920bf894f0717019912a285a4f03d1cfc6c74d601650e199003b4951bdf2f82e
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py<35]
   entry_points:
     - btp2 = BoltzTraP2.interface:btp2_main
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - setuptools
     - cython
     - cmake
