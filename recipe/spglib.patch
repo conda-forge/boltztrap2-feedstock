@@ -1,0 +1,26 @@
+From 7f03cc220228f39ad23e0457cf88893ec68e589e Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jan=20Jan=C3=9Fen?= <janssen@mpie.de>
+Date: Thu, 4 Sep 2025 07:39:29 +0200
+Subject: [PATCH] remove spglib build
+
+---
+ setup.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 9960cea..d08e2ce 100644
+--- a/setup.py
++++ b/setup.py
+@@ -194,10 +194,10 @@ def run(self):
+         ],
+         language="c++",
+         include_dirs=INCLUDE_DIRS
+-        + [np.get_include(), BuildSPGlibCommand.header_dir, EIGEN_DIR],
++        + [np.get_include(), EIGEN_DIR],
+         library_dirs=LIBRARY_DIRS,
+         runtime_library_dirs=LIBRARY_DIRS,
+-        extra_objects=[BuildSPGlibCommand.static_library],
++        extra_objects=[],
+     )
+ ]
+ 
