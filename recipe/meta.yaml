@@ -23,7 +23,6 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
-    - setuptools
     - cython
     - cmake
     - make
@@ -35,6 +34,7 @@ requirements:
     - eigen
     - numpy
     - packaging
+    - setuptools
   run:
     - python
     - {{ pin_compatible('numpy') }}
