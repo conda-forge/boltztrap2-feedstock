@@ -1,0 +1,35 @@
+From df02ff780537e9b15b39a75eb141cb4612693bee Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jan=20Jan=C3=9Fen?= <janssen@mpie.de>
+Date: Thu, 4 Sep 2025 07:58:05 +0200
+Subject: [PATCH] Do not build spglib
+
+---
+ setup.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 9960cea..22ed85e 100644
+--- a/setup.py
++++ b/setup.py
+@@ -181,7 +181,7 @@ def build_extensions(self):
+ 
+     def run(self):
+         """Run build_spglib and then delegate on the normal build_ext."""
+-        self.run_command("build_spglib")
++        # self.run_command("build_spglib")
+         super().run()
+ 
+ 
+@@ -194,10 +194,10 @@ def run(self):
+         ],
+         language="c++",
+         include_dirs=INCLUDE_DIRS
+-        + [np.get_include(), BuildSPGlibCommand.header_dir, EIGEN_DIR],
++        + [np.get_include(), EIGEN_DIR],
+         library_dirs=LIBRARY_DIRS,
+         runtime_library_dirs=LIBRARY_DIRS,
+-        extra_objects=[BuildSPGlibCommand.static_library],
++        extra_objects=[],
+     )
+ ]
+ 
