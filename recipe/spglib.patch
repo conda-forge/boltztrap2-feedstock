@@ -29,7 +29,7 @@ index 9960cea..22ed85e 100644
          library_dirs=LIBRARY_DIRS,
          runtime_library_dirs=LIBRARY_DIRS,
 -        extra_objects=[BuildSPGlibCommand.static_library],
-+        extra_objects=[],
++        libraries=["_spglib"],
      )
  ]
  
