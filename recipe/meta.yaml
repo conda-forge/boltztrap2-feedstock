@@ -13,8 +13,8 @@ source:
     - spglib.patch
 
 build:
-  number: 0
-  skip: true  # [win or py<35]
+  number: 1
+  skip: true  # [win]
   entry_points:
     - btp2 = BoltzTraP2.interface:btp2_main
   script: {{ PYTHON }} -m pip install . -vv
