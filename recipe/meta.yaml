@@ -1,5 +1,5 @@
 {% set name = "BoltzTraP2" %}
-{% set version = "25.3.1" %}
+{% set version = "25.11.1" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
-  sha256: 25420687fe8017ec582e617740de3bfc0e44f733ca7613b69619fdee0899278f
+  sha256: 1a5493cdc9a9d834f1f33f7efad89896e3f8a3f8e36eee0c1699f41d5666234a
   patches:
     - spglib.patch
 
 build:
-  number: 4
+  number: 0
   skip: true  # [win]
   entry_points:
     - btp2 = BoltzTraP2.interface:btp2_main
