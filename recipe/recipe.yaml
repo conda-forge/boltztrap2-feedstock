@@ -15,7 +15,7 @@ source:
     - spglib.patch
 
 build:
-  number: 1
+  number: 2
   skip: win
   script: ${{ PYTHON }} -m pip install . -vv
   python:
